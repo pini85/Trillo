@@ -1,0 +1,86 @@
+/*
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+
+:root {//root is the global parent element. It is even higher the the html
+  //We need to set the css variables here. Because the css variables are only available inside a scope. So we set it in the root and it
+  //applies to all the children.
+
+  --color-primary: #eb2f64;
+  --color-primary-light: #ee4e7b;
+  --color-primary-dark: #BA265D;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+
+  --shadow-dark:0 2rem 6rem rgba(0,0,0, .3);
+  --shadow-light: 0 2rem 5rem rgba(0,0,0, .06);
+
+  --line: 1px solid var(--color-grey-light-2); // you can have a variable that has a variable already inside.
+
+}
+
+//You cannot put css variables inside media queries so that is why we use sass variables. Its perfectly okay to mix between the 2.
+$largest: 75em;//1200px
+$large: 68.75em; //1110px;
+$medium: 56.25em;//900px;
+$small: 37.5em;//600;
+$smallest: 31.25em;//500px
+$extra-small: 26.8em;//430px
+$extra-extra-small: 21.9em;//350px
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $large) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $extra-small) {
+    font-size:40%;
+  }
+
+  @media only screen and (max-width: $extra-extra-small) {
+    font-size: 30%;
+  }
+
+}
+body {
+ font-family: 'Open Sans', sans-serif;
+ font-weight: bold;
+ line-height: 1.6;
+ color: var(--color-grey-dark-2);
+ background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+
