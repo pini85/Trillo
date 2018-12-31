@@ -154,12 +154,17 @@
     &:not(last-child) {
       margin-bottom: .5rem;
 
+
     @media only screen and (max-width: $medium) { margin:0; }
 
 
     }
 
     @media only screen and (max-width: $small) { flex: 1; }
+
+    & span {
+      @media only screen and (max-width: $extra-small) { display:none; }// minimalist approach for smaller screens/
+    }
 
   }
 
@@ -441,6 +446,10 @@
   border-bottom: var(--line);
   display:flex;
   flex-wrap: wrap;
+
+  @media only screen and(max-width: $extra-extra-small) {
+    font-size: 1.1rem;
+  }
 
   &__item {
     flex: 0 0 50%;
